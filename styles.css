@@ -158,6 +158,26 @@ body.night-mode .theme-toggle .icon-night {
   font-size: 0.95rem;
 }
 
+#lab5-section a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+#lab5-section a:hover {
+  text-decoration: underline;
+}
+
+#lab5-section code {
+  background: rgba(178, 34, 34, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+body.night-mode #lab5-section code {
+  background: rgba(224, 74, 74, 0.2);
+}
+
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

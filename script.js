@@ -133,8 +133,18 @@ function toggleTheme() {
   localStorage.setItem('themeOverride', isNight ? 'night' : 'day');
 }
 
+// ========== Лічильник відвідувань ==========
+function updateVisitCount() {
+  let count = parseInt(localStorage.getItem('visitCount') || '0', 10);
+  count += 1;
+  localStorage.setItem('visitCount', count);
+  const el = document.getElementById('visit-count');
+  if (el) el.textContent = count;
+}
+
 // ========== Ініціалізація ==========
 document.addEventListener('DOMContentLoaded', async () => {
+  updateVisitCount();
   displayInFooter();
 
   const comments = await fetchComments();
