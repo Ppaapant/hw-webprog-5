@@ -17,3 +17,11 @@
 
 1. **Formspree** — зареєструйтесь на [formspree.io](https://formspree.io), створіть форму і замініть `YOUR_ENDPOINT` у `index.html` на отриманий endpoint.
 2. **Номер варіанту** — у `script.js` у рядку `const VARIANT_NUMBER = 5` замініть `5` на свій номер у журналі групи.
+
+## Підготовка до ЛР5
+
+Додано npm-скрипти для зручного запуску (`npm start`). Структура проєкту готова для подальшого розширення.
+
+## Посилання на коміт
+
+Після push коміту посилання буде: `https://github.com/Ppaapant/hw-webprog-5/commit/<hash>`
