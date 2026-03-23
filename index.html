@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrew Chornenko – Resume</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="theme-toggle" title="Перемкнути тему">
+    <button id="themeBtn" aria-label="Theme toggle">
+      <span class="icon-day">☀</span>
+      <span class="icon-night">☽</span>
+    </button>
+  </div>
+
+  <main class="resume">
+    <div class="decorative-circle"></div>
+
+    <header class="header">
+      <h1 class="name">Andrew Chornenko</h1>
+      <div class="contact">
+        <p>Lviv, Ukraine</p>
+        <p>+380 68 831 58 19 | jacob@example.com</p>
+      </div>
+    </header>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2 class="section-title">OBJECTIVE</h2>
+      <p class="section-text">
+        Lead the development of an AI-powered platform for the financial industry, 
+        leveraging technical expertise and strategic vision to drive innovation and 
+        deliver measurable business impact.
+      </p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2 class="section-title">EDUCATION</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">MBA | Jasper University</span>
+          <span class="entry-date">20XX – 20XX</span>
+        </div>
+        <p class="entry-desc">Capstone project: Developed a strategic consulting framework for enterprise digital transformation.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">BS Computer Science | Bellows College</span>
+          <span class="entry-date">20XX – 20XX</span>
+        </div>
+        <p class="entry-desc">Relevant coursework: Data Structures, Algorithms, Software Engineering, Database Systems.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2 class="section-title">EXPERIENCE</h2>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Technical Program Manager | Relecloud</span>
+          <span class="entry-date">20XX – 20XX</span>
+        </div>
+        <p class="entry-desc">Oversaw project scope, timelines, and cross-functional teams. Delivered cloud migration initiatives on schedule.</p>
+      </div>
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-title">Project Manager | Proseware, Inc.</span>
+          <span class="entry-date">20XX – 20XX</span>
+        </div>
+        <p class="entry-desc">Managed software development lifecycle and coordinated with stakeholders to prioritize features and resolve blockers.</p>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2 class="section-title">SKILLS</h2>
+      <div class="skills-grid">
+        <ul class="skills-column">
+          <li>Project management</li>
+          <li>Communication</li>
+        </ul>
+        <ul class="skills-column">
+          <li>Technical expertise</li>
+          <li>Problem-solving</li>
+        </ul>
+        <ul class="skills-column">
+          <li>Leadership</li>
+          <li>Attention to detail</li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section>
+      <h2 class="section-title">ACTIVITIES</h2>
+      <p class="section-text">
+        Active participant in local hackathons and innovation challenges. 
+        Passionate about exploring emerging technologies and collaborative problem-solving.
+      </p>
+    </section>
+
+    <hr class="section-divider">
+
+    <section id="comments-section">
+      <h2 class="section-title">ВІДГУКИ КОМЕНТАРІВ</h2>
+      <div id="comments-container">
+        <p class="loading">Завантаження коментарів...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <h3 class="footer-title">Інформація про браузер та ОС</h3>
+    <pre id="browser-info"></pre>
+  </footer>
+
+  <div id="modal-overlay" class="modal-overlay">
+    <div class="modal">
+      <button type="button" class="modal-close" id="modalClose" aria-label="Закрити">&times;</button>
+      <h2 class="modal-title">Форма зворотнього зв'язку</h2>
+      <form action="https://formspree.io/f/YOUR_ENDPOINT" method="POST" id="feedbackForm">
+        <label for="name">Ім'я</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Номер телефону</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="message">Повідомлення</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="submit-btn">Відправити</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

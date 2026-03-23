@@ -1,0 +1,12 @@
+{
+  "name": "hw-webprog-5",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "serve",
+    "dev": "serve"
+  },
+  "dependencies": {
+    "serve": "^14.2.6"
+  }
+}
