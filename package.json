@@ -2,11 +2,21 @@
   "name": "hw-webprog-5",
   "version": "1.0.0",
   "private": true,
+  "description": "Лабораторна робота №6 — Sails.js + Nodemailer + Brevo SMTP + zrok",
+  "main": "app.js",
   "scripts": {
-    "start": "serve",
-    "dev": "serve"
+    "start": "node app.js",
+    "dev": "node app.js",
+    "tunnel": "zrok share public http://localhost:1337",
+    "debug": "node --inspect app.js"
   },
   "dependencies": {
-    "serve": "^14.2.6"
+    "dotenv": "^16.4.5",
+    "nodemailer": "^6.9.13",
+    "sails": "^1.5.0",
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=18"
   }
 }

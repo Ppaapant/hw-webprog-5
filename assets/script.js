@@ -133,6 +133,47 @@ function toggleTheme() {
   localStorage.setItem('themeOverride', isNight ? 'night' : 'day');
 }
 
+// ========== Відправка форми на бекенд (POST /api/contact) ==========
+function setupFeedbackForm() {
+  const form = document.getElementById('feedbackForm');
+  const status = document.getElementById('formStatus');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Відправляємо...';
+    status.className = 'form-status pending';
+
+    const payload = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      subject: form.subject.value.trim(),
+      message: form.message.value.trim(),
+    };
+
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        throw new Error(data.error || data.message || `HTTP ${res.status}`);
+      }
+
+      status.textContent = 'Дякуємо! Повідомлення відправлено.';
+      status.className = 'form-status success';
+      form.reset();
+      setTimeout(() => hideModal(), 2000);
+    } catch (err) {
+      status.textContent = 'Помилка: ' + err.message;
+      status.className = 'form-status error';
+    }
+  });
+}
+
 // ========== Лічильник відвідувань ==========
 function updateVisitCount() {
   let count = parseInt(localStorage.getItem('visitCount') || '0', 10);
@@ -162,6 +203,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     .addEventListener('click', (e) => {
       if (e.target.id === 'modal-overlay') hideModal();
     });
+
+  setupFeedbackForm();
 
   // Перевірка часу для автоматичної теми кожну хвилину (якщо немає ручного вибору)
   setInterval(() => {
